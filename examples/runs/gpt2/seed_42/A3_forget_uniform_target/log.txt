@@ -1,0 +1,16 @@
+====================================================================================================
+MODEL: gpt2
+SCENARIO: forget_uniform_target
+SEED: 42
+GPU: 0
+DEVICE: cuda:0
+====================================================================================================
+All params: 125,250,816
+Trainable params: 811,008
+Trainable preview: ['base_model.model.transformer.h.0.attn.c_attn.lora_A.default.weight', 'base_model.model.transformer.h.0.attn.c_attn.lora_B.default.weight', 'base_model.model.transformer.h.0.attn.c_proj.lora_A.default.weight', 'base_model.model.transformer.h.0.attn.c_proj.lora_B.default.weight', 'base_model.model.transformer.h.0.mlp.c_proj.lora_A.default.weight', 'base_model.model.transformer.h.0.mlp.c_proj.lora_B.default.weight', 'base_model.model.transformer.h.1.attn.c_attn.lora_A.default.weight', 'base_model.model.transformer.h.1.attn.c_attn.lora_B.default.weight', 'base_model.model.transformer.h.1.attn.c_proj.lora_A.default.weight', 'base_model.model.transformer.h.1.attn.c_proj.lora_B.default.weight', 'base_model.model.transformer.h.1.mlp.c_proj.lora_A.default.weight', 'base_model.model.transformer.h.1.mlp.c_proj.lora_B.default.weight', 'base_model.model.transformer.h.2.attn.c_attn.lora_A.default.weight', 'base_model.model.transformer.h.2.attn.c_attn.lora_B.default.weight', 'base_model.model.transformer.h.2.attn.c_proj.lora_A.default.weight', 'base_model.model.transformer.h.2.attn.c_proj.lora_B.default.weight', 'base_model.model.transformer.h.2.mlp.c_proj.lora_A.default.weight', 'base_model.model.transformer.h.2.mlp.c_proj.lora_B.default.weight', 'base_model.model.transformer.h.3.attn.c_attn.lora_A.default.weight', 'base_model.model.transformer.h.3.attn.c_attn.lora_B.default.weight', 'base_model.model.transformer.h.3.attn.c_proj.lora_A.default.weight', 'base_model.model.transformer.h.3.attn.c_proj.lora_B.default.weight', 'base_model.model.transformer.h.3.mlp.c_proj.lora_A.default.weight', 'base_model.model.transformer.h.3.mlp.c_proj.lora_B.default.weight', 'base_model.model.transformer.h.4.attn.c_attn.lora_A.default.weight', 'base_model.model.transformer.h.4.attn.c_attn.lora_B.default.weight', 'base_model.model.transformer.h.4.attn.c_proj.lora_A.default.weight', 'base_model.model.transformer.h.4.attn.c_proj.lora_B.default.weight', 'base_model.model.transformer.h.4.mlp.c_proj.lora_A.default.weight', 'base_model.model.transformer.h.4.mlp.c_proj.lora_B.default.weight']
+Target preview: []
+forget_uniform_target | epoch 1/5 | loss=17.7875 | retain=0.1561 | forget_comp=35.1627 | general=0.2502 | nonfinite=0 | time=0.6s
+forget_uniform_target | epoch 2/5 | loss=16.6918 | retain=0.1784 | forget_comp=32.9385 | general=0.2210 | nonfinite=0 | time=0.6s
+forget_uniform_target | epoch 3/5 | loss=15.4333 | retain=0.1559 | forget_comp=30.4593 | general=0.2387 | nonfinite=0 | time=0.6s
+forget_uniform_target | epoch 4/5 | loss=14.3669 | retain=0.1836 | forget_comp=28.2671 | general=0.2489 | nonfinite=0 | time=0.6s
+forget_uniform_target | epoch 5/5 | loss=13.3374 | retain=0.2427 | forget_comp=26.0919 | general=0.2438 | nonfinite=0 | time=0.6s

@@ -1,0 +1,356 @@
+
+====================================================================================================
+1. BASIC SYSTEM INFO
+====================================================================================================
+Current working directory:
+/home/tahiti/Malashin_Projects
+
+Platform:
+Linux-6.8.0-110-generic-x86_64-with-glibc2.39
+
+Python:
+3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]
+
+Python executable:
+/usr/bin/python3
+
+Prefix:
+sys.prefix = /usr
+sys.base_prefix = /usr
+
+Environment:
+CONDA_PREFIX = None
+VIRTUAL_ENV = None
+PATH = /home/tahiti/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+
+User:
+
+$ whoami
+tahiti
+
+$ hostname
+tahiti-Standard-PC-i440FX-PIIX-1996
+
+$ pwd
+/home/tahiti/Malashin_Projects
+
+CPU:
+
+$ nproc
+32
+
+$ lscpu | head -80
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           40 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  32
+On-line CPU(s) list:                     0-31
+Vendor ID:                               GenuineIntel
+Model name:                              QEMU Virtual CPU version 2.5+
+CPU family:                              15
+Model:                                   107
+Thread(s) per core:                      1
+Core(s) per socket:                      32
+Socket(s):                               1
+Stepping:                                1
+BogoMIPS:                                4000.00
+Flags:                                   fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx lm constant_tsc nopl xtopology cpuid tsc_known_freq pni cx16 x2apic hypervisor lahf_lm cpuid_fault pti
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               1 MiB (32 instances)
+L1i cache:                               1 MiB (32 instances)
+L2 cache:                                128 MiB (32 instances)
+L3 cache:                                16 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-31
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Indirect target selection: Mitigation; Aligned branch/return thunks
+Vulnerability Itlb multihit:             KVM: Mitigation: VMX unsupported
+Vulnerability L1tf:                      Mitigation; PTE Inversion
+Vulnerability Mds:                       Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+Vulnerability Meltdown:                  Mitigation; PTI
+Vulnerability Mmio stale data:           Unknown: No mitigations
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Vulnerable
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Retpoline
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+
+RAM:
+
+$ free -h
+total        used        free      shared  buff/cache   available
+Mem:            30Gi       6.1Gi        17Gi        86Mi       7.9Gi        24Gi
+Swap:          8.0Gi          0B       8.0Gi
+
+====================================================================================================
+2. CUDA / GPU ENVIRONMENT VARIABLES
+====================================================================================================
+CUDA_VISIBLE_DEVICES = None
+CUDA_HOME = None
+CUDA_PATH = None
+LD_LIBRARY_PATH = None
+PATH = /home/tahiti/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+NVIDIA_VISIBLE_DEVICES = None
+NVIDIA_DRIVER_CAPABILITIES = None
+CONDA_PREFIX = None
+VIRTUAL_ENV = None
+
+====================================================================================================
+3. SYSTEM-LEVEL GPU VISIBILITY
+====================================================================================================
+Check if nvidia-smi exists:
+which nvidia-smi = /usr/bin/nvidia-smi
+
+$ nvidia-smi
+Sun May 24 18:53:18 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.163.01             Driver Version: 550.163.01     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:00:09.0 Off |                    0 |
+| N/A   42C    P0             36W /  250W |      14MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A     13284      G   /usr/lib/xorg/Xorg                              4MiB |
++-----------------------------------------------------------------------------------------+
+
+$ nvidia-smi --query-gpu=index,name,driver_version,cuda_version,memory.total,memory.used,memory.free,utilization.gpu --format=csv
+COMMAND FAILED, returncode=2
+Field "cuda_version" is not a valid field to query.
+
+PCI devices:
+
+$ lspci | grep -i nvidia
+00:09.0 3D controller: NVIDIA Corporation GA100 [A100 PCIe 40GB] (rev a1)
+
+/dev/nvidia*:
+
+$ ls -lah /dev/nvidia* 2>/dev/null || true
+crw-rw-rw- 1 root root 195,   0 May 21 12:34 /dev/nvidia0
+crw-rw-rw- 1 root root 195, 255 May 21 12:34 /dev/nvidiactl
+crw-rw-rw- 1 root root 195, 254 May 21 12:34 /dev/nvidia-modeset
+crw-rw-rw- 1 root root 236,   0 May 21 12:34 /dev/nvidia-uvm
+crw-rw-rw- 1 root root 236,   1 May 21 12:34 /dev/nvidia-uvm-tools
+
+NVIDIA proc driver version:
+
+$ cat /proc/driver/nvidia/version 2>/dev/null || true
+NVRM version: NVIDIA UNIX x86_64 Kernel Module  550.163.01  Tue Apr  8 12:41:17 UTC 2025
+GCC version:  gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1)
+
+Loaded NVIDIA kernel modules:
+
+$ lsmod | grep -i nvidia || true
+nvidia_uvm           4956160  0
+nvidia_drm            122880  4
+nvidia_modeset       1355776  2 nvidia_drm
+nvidia              54411264  34 nvidia_uvm,nvidia_modeset
+video                  77824  1 nvidia_modeset
+
+CUDA compiler:
+
+$ which nvcc || true
+<empty output>
+
+$ nvcc --version 2>/dev/null || true
+<empty output>
+
+====================================================================================================
+4. DOCKER / CONTAINER CHECKS
+====================================================================================================
+
+$ cat /proc/1/cgroup | head -50
+0::/init.scope
+
+$ test -f /.dockerenv && echo 'INSIDE_DOCKER=YES' || echo 'INSIDE_DOCKER=NO'
+INSIDE_DOCKER=NO
+
+$ env | grep -E 'NVIDIA|CUDA|CONTAINER|DOCKER' || true
+<empty output>
+
+====================================================================================================
+5. PYTORCH CHECKS
+====================================================================================================
+torch.__version__ = 2.11.0+cu130
+torch.version.cuda = 13.0
+torch.backends.cuda.is_built() = True
+torch.cuda.is_available() = False
+torch.cuda.device_count() = 1
+torch.cuda.current_device() ERROR: RuntimeError('The NVIDIA driver on your system is too old (found version 12040). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver.')
+torch.cuda.get_arch_list() = []
+
+PyTorch config:
+PyTorch built with:
+  - GCC 13.3
+  - C++ Version: 201703
+  - Intel(R) oneAPI Math Kernel Library Version 2024.2-Product Build 20240605 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v3.10.2 (Git Hash f1d471933dc852f956fd05389f9313c7148783d5)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: DEFAULT
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, COMMIT_SHA=70d99e998b4955e0049d13a98d77ae1b14db1f45, CUDA_VERSION=13.0, CUDNN_VERSION=9.19.0, CXX_COMPILER=/opt/rh/gcc-toolset-13/root/usr/bin/c++, CXX_FLAGS= -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_FBGEMM -DUSE_MSLK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -DC10_NODEPRECATED -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=range-loop-construct -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-unknown-pragmas -Wno-unused-parameter -Wno-strict-overflow -Wno-strict-aliasing -Wno-stringop-overflow -Wsuggest-override -Wno-psabi -Wno-error=old-style-cast -faligned-new -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-dangling-reference -Wno-error=dangling-reference -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, TORCH_VERSION=2.11.0, USE_CUDA=ON, USE_CUDNN=ON, USE_CUSPARSELT=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=1, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, USE_XCCL=OFF, USE_XPU=OFF, 
+
+
+====================================================================================================
+5.0. PYTORCH GPU DEVICE 0
+====================================================================================================
+get_device_properties ERROR: RuntimeError('The NVIDIA driver on your system is too old (found version 12040). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver.')
+mem_get_info ERROR: RuntimeError('The NVIDIA driver on your system is too old (found version 12040). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver.')
+
+====================================================================================================
+6. PYTORCH GPU FUNCTIONAL TESTS
+====================================================================================================
+torch.cuda.is_available() is False, skipping GPU tensor tests.
+
+====================================================================================================
+7. JUPYTER / KERNEL CHECKS
+====================================================================================================
+ipykernel version = 6.29.3
+notebook version = 6.4.12
+jupyter_core version = 5.3.2
+
+$ jupyter kernelspec list 2>/dev/null || true
+<empty output>
+
+$ python -m ipykernel --version 2>/dev/null || true
+<empty output>
+
+====================================================================================================
+8. PYTHON PACKAGE CHECKS
+====================================================================================================
+
+$ /usr/bin/python3 -m pip show torch torchvision torchaudio 2>/dev/null || true
+Name: torch
+Version: 2.11.0
+Summary: Tensors and Dynamic neural networks in Python with strong GPU acceleration
+Home-page: 
+Author: 
+Author-email: PyTorch Team <packages@pytorch.org>
+License: BSD-3-Clause
+Location: /home/tahiti/.local/lib/python3.12/site-packages
+Requires: cuda-bindings, cuda-toolkit, filelock, fsspec, jinja2, networkx, nvidia-cudnn-cu13, nvidia-cusparselt-cu13, nvidia-nccl-cu13, nvidia-nvshmem-cu13, setuptools, sympy, triton, typing-extensions
+Required-by:
+
+$ /usr/bin/python3 -m pip list | grep -E 'torch|cuda|nvidia|triton' || true
+cuda-bindings               13.2.0
+cuda-pathfinder             1.5.4
+cuda-toolkit                13.0.2
+nvidia-cublas               13.1.0.3
+nvidia-cuda-cupti           13.0.85
+nvidia-cuda-nvrtc           13.0.88
+nvidia-cuda-runtime         13.0.96
+nvidia-cudnn-cu13           9.19.0.56
+nvidia-cufft                12.0.0.61
+nvidia-cufile               1.15.1.6
+nvidia-curand               10.4.0.35
+nvidia-cusolver             12.0.4.66
+nvidia-cusparse             12.6.3.3
+nvidia-cusparselt-cu13      0.8.0
+nvidia-nccl-cu13            2.28.9
+nvidia-nvjitlink            13.0.88
+nvidia-nvshmem-cu13         3.4.5
+nvidia-nvtx                 13.0.85
+torch                       2.11.0
+triton                      3.6.0
+
+Try import common NVIDIA Python packages:
+torch: OK
+triton: OK
+nvidia: OK
+
+====================================================================================================
+9. SUBPROCESS PYTHON CUDA CHECK
+====================================================================================================
+
+$ /usr/bin/python3 -c "import torch,sys,os;print('exe=',sys.executable);print('torch=',torch.__version__);print('torch_cuda=',torch.version.cuda);print('cuda_available=',torch.cuda.is_available());print('device_count=',torch.cuda.device_count());print('CUDA_VISIBLE_DEVICES=',os.environ.get('CUDA_VISIBLE_DEVICES'));print('names=',[torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())])"
+COMMAND FAILED, returncode=1
+/home/tahiti/.local/lib/python3.12/site-packages/torch/cuda/__init__.py:180: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 12040). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:119.)
+  return torch._C._cuda_getDeviceCount() > 0
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/tahiti/.local/lib/python3.12/site-packages/torch/cuda/__init__.py", line 653, in get_device_name
+    return get_device_properties(device).name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tahiti/.local/lib/python3.12/site-packages/torch/cuda/__init__.py", line 686, in get_device_properties
+    _lazy_init()  # will define _get_device_properties
+    ^^^^^^^^^^^^
+  File "/home/tahiti/.local/lib/python3.12/site-packages/torch/cuda/__init__.py", line 478, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: The NVIDIA driver on your system is too old (found version 12040). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver.
+exe= /usr/bin/python3
+torch= 2.11.0+cu130
+torch_cuda= 13.0
+cuda_available= False
+device_count= 1
+CUDA_VISIBLE_DEVICES= None
+
+====================================================================================================
+10. DIAGNOSIS / WHAT IT MEANS
+====================================================================================================
+nvidia-smi exists: True
+torch CUDA built: True
+torch.version.cuda: 13.0
+torch.cuda.is_available: False
+torch.cuda.device_count: 1
+1. nvidia-smi exists and PyTorch has CUDA build, but torch.cuda.is_available() is False. Likely causes: driver too old for this PyTorch CUDA build, GPU not passed into container, CUDA_VISIBLE_DEVICES hides the GPU, or Jupyter kernel uses a broken environment.
+
+====================================================================================================
+11. RECOMMENDED ACTIONS
+====================================================================================================
+Case A: nvidia-smi fails or no /dev/nvidia0
+  -> You are probably on a CPU node/container, or GPU is not passed through. Use the correct GPU node, request GPU in SLURM, or start Docker with --gpus all.
+
+Case B: nvidia-smi works, but torch.version.cuda is None
+  -> Installed PyTorch is CPU-only. Reinstall CUDA PyTorch:
+     pip uninstall -y torch torchvision torchaudio
+     pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+  If driver is old, try cu118:
+     pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+Case C: nvidia-smi works, torch.version.cuda is not None, but torch.cuda.is_available() is False
+  -> Usually driver/PyTorch CUDA mismatch or container issue.
+  Check driver version in nvidia-smi.
+  If driver is old, install PyTorch with older CUDA, e.g. cu118.
+  If inside Docker, restart container with:
+     docker run --gpus all ...
+  If SLURM/cluster, request GPU:
+     srun --gres=gpu:a100:1 --pty bash
+
+Case D: Terminal sees GPU, Jupyter does not
+  -> Jupyter kernel is not the same Python environment.
+  Compare:
+     which python
+     python -c "import torch; print(torch.cuda.is_available())"
+  with this notebook:
+     import sys; print(sys.executable)
+  Then install/register correct kernel:
+     python -m pip install ipykernel
+     python -m ipykernel install --user --name gpu-env --display-name 'Python GPU env'
+
+Case E: CUDA works
+  -> In training code set:
+     DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+     USE_AMP = True
+     BATCH_SIZE = 256 or 512
+     MAX_PARALLEL_JOBS = 2..5 depending on memory/utilization
+
+====================================================================================================
+12. SAVE REPORT
+====================================================================================================

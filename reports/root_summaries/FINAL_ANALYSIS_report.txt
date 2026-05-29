@@ -1,0 +1,83 @@
+==========================================================================================
+FINAL FRACTIONAL TRANSFORMER EXPERIMENTS REPORT
+==========================================================================================
+
+Input rows: 3375
+Complete runs: 3375
+Non-complete runs: -3376
+Experiments: 4
+Datasets: 3
+Models: 5
+Scenarios: 51
+
+BEST SINGLE RUN
+------------------------------------------------------------------------------------------
+runs_transformer_fractional | small_D2_L64 | T_wide_mean | adamw | run=0 | best_macro_f1=0.3222 | acc=0.3650
+
+BEST SCENARIOS BY MEAN MACRO F1
+------------------------------------------------------------------------------------------
+adamw | family=other | mean_f1=0.1727 | std=0.0802 | n=45
+adam | family=other | mean_f1=0.1707 | std=0.0765 | n=45
+delayed_head_mix_a08_lam010_warm3 | family=head_mixed_memory | mean_f1=0.1641 | std=0.0743 | n=45
+embeddings_only_replace_a08 | family=embedding_replacement_memory | mean_f1=0.1641 | std=0.0751 | n=45
+emb_mix_a08_lam005 | family=embedding_mixed_memory | mean_f1=0.1640 | std=0.0746 | n=45
+delayed_emb_mix_a08_lam025_warm3 | family=embedding_mixed_memory | mean_f1=0.1639 | std=0.0744 | n=45
+emb_mix_a08_lam010 | family=embedding_mixed_memory | mean_f1=0.1637 | std=0.0750 | n=45
+all_mix_a08_lam025 | family=all_parameter_weak_mix | mean_f1=0.1636 | std=0.0744 | n=45
+emb_mix_a08_lam015 | family=embedding_mixed_memory | mean_f1=0.1636 | std=0.0749 | n=75
+emb_replace_a09 | family=embedding_replacement_memory | mean_f1=0.1633 | std=0.0740 | n=45
+emb_replace_a07 | family=embedding_replacement_memory | mean_f1=0.1632 | std=0.0771 | n=45
+mixed_all_a08_lam025 | family=all_parameter_weak_mix | mean_f1=0.1630 | std=0.0751 | n=45
+all_mix_a08_lam015 | family=all_parameter_weak_mix | mean_f1=0.1629 | std=0.0767 | n=45
+delayed_emb_mix_a08_lam025_warm3 | family=embedding_mixed_memory | mean_f1=0.1627 | std=0.0737 | n=75
+delayed_mixed_all_a08_lam025_warm3 | family=all_parameter_weak_mix | mean_f1=0.1627 | std=0.0752 | n=45
+
+BEST SCENARIOS VS BASELINE
+------------------------------------------------------------------------------------------
+emb_mix_a08_lam015 | delta_mean=0.0022 | delta_std=0.0142 | win_rate=0.5200 | wins=39 / 75
+delayed_head_mix_a08_lam010_warm3 | delta_mean=0.0021 | delta_std=0.0107 | win_rate=0.7556 | wins=34 / 45
+emb_mix_a08_lam005 | delta_mean=0.0020 | delta_std=0.0127 | win_rate=0.5333 | wins=24 / 45
+delayed_emb_mix_a08_lam025_warm3 | delta_mean=0.0019 | delta_std=0.0140 | win_rate=0.5333 | wins=24 / 45
+emb_mix_a08_lam010 | delta_mean=0.0017 | delta_std=0.0143 | win_rate=0.5778 | wins=26 / 45
+all_mix_a08_lam025 | delta_mean=0.0017 | delta_std=0.0138 | win_rate=0.5556 | wins=25 / 45
+emb_replace_a09 | delta_mean=0.0014 | delta_std=0.0119 | win_rate=0.5556 | wins=25 / 45
+delayed_emb_mix_a08_lam025_warm3 | delta_mean=0.0013 | delta_std=0.0134 | win_rate=0.5333 | wins=40 / 75
+emb_replace_a07 | delta_mean=0.0013 | delta_std=0.0148 | win_rate=0.5111 | wins=23 / 45
+delayed_head_mix_a08_lam010_warm3 | delta_mean=0.0011 | delta_std=0.0160 | win_rate=0.5733 | wins=43 / 75
+all_mix_a08_lam015 | delta_mean=0.0010 | delta_std=0.0199 | win_rate=0.6667 | wins=30 / 45
+emb_replace_a075 | delta_mean=0.0008 | delta_std=0.0160 | win_rate=0.5333 | wins=40 / 75
+emb_mix_a08_lam010 | delta_mean=0.0008 | delta_std=0.0144 | win_rate=0.5067 | wins=38 / 75
+delayed_head_mix_a08_lam005_warm3 | delta_mean=0.0006 | delta_std=0.0168 | win_rate=0.5067 | wins=38 / 75
+emb_mix_a08_lam0025 | delta_mean=0.0004 | delta_std=0.0148 | win_rate=0.5200 | wins=39 / 75
+
+BEST BY DATASET
+------------------------------------------------------------------------------------------
+runs_transformer_fractional | small_D2_L64 | T_wide_mean | adamw | run=0 | f1=0.3222 | acc=0.3650
+runs_fractional_hypothesis_v2 | small_D2_L64 | T_wide_mean | baseline_adamw | run=1 | f1=0.3020 | acc=0.3570
+runs_fractional_focused_final | small_D2_L64 | T_base_mean | all_mix_a08_lam020 | run=1 | f1=0.3005 | acc=0.3660
+runs_fractional_scenarios | small_D2_L64 | T_deep_mean | baseline_adamw | run=1 | f1=0.2958 | acc=0.3630
+runs_fractional_hypothesis_v2 | base_D3_L128 | T_deep_mean | all_mix_a08_lam015 | run=1 | f1=0.1713 | acc=0.3020
+runs_fractional_focused_final | base_D3_L128 | T_deep_mean | emb_replace_a060 | run=4 | f1=0.1701 | acc=0.2765
+runs_transformer_fractional | base_D3_L128 | T_small_mean | rmsprop | run=2 | f1=0.1591 | acc=0.2775
+runs_fractional_scenarios | base_D3_L128 | T_wide_mean | delayed_mixed_head_a08_lam025_warm3 | run=1 | f1=0.1553 | acc=0.2870
+runs_transformer_fractional | hard_D4_L160 | T_wide_mean | adam | run=2 | f1=0.1200 | acc=0.3425
+runs_fractional_scenarios | hard_D4_L160 | T_wide_mean | embeddings_only_replace_a08 | run=0 | f1=0.1191 | acc=0.3421
+runs_fractional_focused_final | hard_D4_L160 | T_small_mean | all_mix_a08_lam030 | run=4 | f1=0.1167 | acc=0.3367
+runs_fractional_hypothesis_v2 | hard_D4_L160 | T_small_mean | delayed_emb_mix_a08_lam010_warm3 | run=1 | f1=0.1138 | acc=0.3296
+
+SCENARIO FAMILY SUMMARY
+------------------------------------------------------------------------------------------
+baseline | mean_f1=0.1625 | std=0.0743 | max=0.3020 | n=165
+embedding_mixed_memory | mean_f1=0.1619 | std=0.0731 | max=0.2956 | n=870
+embedding_replacement_memory | mean_f1=0.1619 | std=0.0734 | max=0.2964 | n=480
+head_mixed_memory | mean_f1=0.1617 | std=0.0730 | max=0.2977 | n=435
+all_parameter_weak_mix | mean_f1=0.1610 | std=0.0745 | max=0.3005 | n=750
+other | mean_f1=0.1518 | std=0.0724 | max=0.3222 | n=540
+full_replace_negative | mean_f1=0.1149 | std=0.0638 | max=0.2646 | n=135
+
+INTERPRETATION
+------------------------------------------------------------------------------------------
+1. Full replacement of all gradients should be treated as a negative control, because earlier experiments showed it consistently damages optimization.
+2. The main promising direction is weak/selective fractional memory: head-mix, embeddings-mix, delayed embeddings-mix, and weak all-parameter mix.
+3. The key claim should be modest and careful: selective fractional memory can slightly improve or match AdamW in several regimes, not dominate it universally.
+4. The most important tables for paper/report writing are scenario_vs_baseline, by_dataset_scenario, by_dataset_model_scenario, and leaderboard.

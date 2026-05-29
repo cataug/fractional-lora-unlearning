@@ -1,0 +1,62 @@
+====================================================================================================
+REAL TEXT FRACTIONAL CONCEPT SUMMARY
+====================================================================================================
+
+Run dir: /home/tahiti/Malashin_Projects/runs_real_text_fractional_concept
+Expected epochs: 5
+
+Found rows: 780
+Complete runs: 780
+Non-complete runs: 0
+Datasets: 3
+Models: 4
+Scenarios: 13
+
+BEST SINGLE RUN
+----------------------------------------------------------------------------------------------------
+ag_news | distilbert_base_uncased | emb_mix_a08_lam015 | run=3 | test_macro_f1@best_val=0.9459 | val_macro_f1=0.9439
+
+TOP SCENARIOS BY MEAN TEST MACRO-F1 @ BEST VAL
+----------------------------------------------------------------------------------------------------
+emb_replace_a050 | family=embedding_alpha_sweep_replace | mean=0.7867 | std=0.1571 | n=60
+emb_replace_a060 | family=embedding_alpha_sweep_replace | mean=0.7852 | std=0.1600 | n=60
+emb_replace_a080 | family=embedding_alpha_sweep_replace | mean=0.7843 | std=0.1607 | n=60
+emb_replace_a090 | family=embedding_alpha_sweep_replace | mean=0.7842 | std=0.1615 | n=60
+emb_replace_a070 | family=embedding_alpha_sweep_replace | mean=0.7834 | std=0.1609 | n=60
+emb_mix_a08_lam015 | family=embedding_weak_mix | mean=0.7719 | std=0.1855 | n=60
+emb_mix_a08_lam010 | family=embedding_weak_mix | mean=0.7718 | std=0.1858 | n=60
+baseline_adamw | family=baseline | mean=0.7712 | std=0.1882 | n=60
+delayed_head_mix_a08_lam010_warm1 | family=head_mixed_control | mean=0.7710 | std=0.1862 | n=60
+bottom1_replace_a070 | family=bottom1_layer_replace | mean=0.5915 | std=0.3072 | n=60
+emb_plus_bottom1_replace_a070 | family=embedding_plus_bottom1_replace | mean=0.5440 | std=0.3315 | n=60
+bottom2_replace_a070 | family=bottom2_layer_replace | mean=0.4772 | std=0.3349 | n=60
+negative_full_replace_a08 | family=negative_global_replace | mean=0.4744 | std=0.3247 | n=60
+
+TOP SCENARIOS VS BASELINE
+----------------------------------------------------------------------------------------------------
+emb_replace_a050 | delta_mean=0.0156 | delta_std=0.0367 | win_rate=0.4500 | wins=27 / 60
+emb_replace_a060 | delta_mean=0.0140 | delta_std=0.0394 | win_rate=0.4833 | wins=29 / 60
+emb_replace_a080 | delta_mean=0.0132 | delta_std=0.0329 | win_rate=0.4500 | wins=27 / 60
+emb_replace_a090 | delta_mean=0.0130 | delta_std=0.0373 | win_rate=0.3500 | wins=21 / 60
+emb_replace_a070 | delta_mean=0.0123 | delta_std=0.0382 | win_rate=0.4000 | wins=24 / 60
+emb_mix_a08_lam015 | delta_mean=0.0008 | delta_std=0.0095 | win_rate=0.4833 | wins=29 / 60
+emb_mix_a08_lam010 | delta_mean=0.0006 | delta_std=0.0135 | win_rate=0.4500 | wins=27 / 60
+delayed_head_mix_a08_lam010_warm1 | delta_mean=-0.0002 | delta_std=0.0130 | win_rate=0.4167 | wins=25 / 60
+bottom1_replace_a070 | delta_mean=-0.1797 | delta_std=0.3357 | win_rate=0.2500 | wins=15 / 60
+emb_plus_bottom1_replace_a070 | delta_mean=-0.2272 | delta_std=0.3722 | win_rate=0.2500 | wins=15 / 60
+bottom2_replace_a070 | delta_mean=-0.2940 | delta_std=0.3814 | win_rate=0.1667 | wins=10 / 60
+negative_full_replace_a08 | delta_mean=-0.2968 | delta_std=0.3816 | win_rate=0.1833 | wins=11 / 60
+
+BEST BY DATASET
+----------------------------------------------------------------------------------------------------
+ag_news | distilbert_base_uncased | emb_mix_a08_lam015 | run=3 | test_macro_f1@best_val=0.9459
+imdb | distilbert_base_uncased | emb_mix_a08_lam015 | run=4 | test_macro_f1@best_val=0.8781
+20newsgroups | distilbert_base_uncased | emb_replace_a080 | run=1 | test_macro_f1@best_val=0.6883
+
+FILES CREATED
+----------------------------------------------------------------------------------------------------
+/home/tahiti/Malashin_Projects/concept_full_summary.xlsx
+/home/tahiti/Malashin_Projects/concept_full_summary.csv
+/home/tahiti/Malashin_Projects/concept_brief_summary.xlsx
+/home/tahiti/Malashin_Projects/concept_brief_summary.csv
+/home/tahiti/Malashin_Projects/concept_brief_report.txt
