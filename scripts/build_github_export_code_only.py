@@ -11,7 +11,7 @@ from datetime import datetime
 # CONFIG
 # ============================================================
 
-ROOT = Path("/home/tahiti/Malashin_Projects")
+ROOT = Path("/home/user/fractional_unlearning")
 EXPORT = ROOT / "github_export_fractional_unlearning_full"
 
 RESET_EXPORT = True

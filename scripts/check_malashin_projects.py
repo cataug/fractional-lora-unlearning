@@ -9,7 +9,7 @@ from datetime import datetime
 import pandas as pd
 
 
-ROOT = Path("/home/tahiti/Malashin_Projects")
+ROOT = Path("/home/user/fractional_unlearning")
 OUT_DIR = ROOT / "_folder_check"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 

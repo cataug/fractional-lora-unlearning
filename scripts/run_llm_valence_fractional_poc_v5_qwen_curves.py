@@ -35,7 +35,7 @@ from peft import (
 # ROOTS
 # ============================================================
 
-ROOT = Path("/home/tahiti/Malashin_Projects")
+ROOT = Path("/home/user/fractional_unlearning")
 LLM_ROOT = ROOT / "hf_llm_models"
 
 OUT_ROOT = ROOT / "llm_valence_fractional_poc_v5_qwen_curves"

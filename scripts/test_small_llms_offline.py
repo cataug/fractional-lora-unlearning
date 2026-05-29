@@ -6,7 +6,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 
-ROOT = Path("/home/tahiti/Malashin_Projects")
+ROOT = Path("/home/user/fractional_unlearning")
 MODEL_DIR = ROOT / "hf_llm_models"
 
 MODELS = [

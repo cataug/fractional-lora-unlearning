@@ -20,7 +20,7 @@ from transformers import (
 # ROOTS
 # ============================================================
 
-ROOT = Path("/home/tahiti/Malashin_Projects")
+ROOT = Path("/home/user/fractional_unlearning")
 
 HF_CACHE_DIR = ROOT / "hf_cache_llm"
 MODEL_DIR = ROOT / "hf_llm_models"
@@ -92,7 +92,7 @@ def print_env() -> None:
     if ".venv_a100" not in sys.executable:
         print("\nWARNING: Python does not look like .venv_a100.")
         print("Expected:")
-        print("  /home/tahiti/Malashin_Projects/.venv_a100/bin/python")
+        print("  /home/user/fractional_unlearning/.venv_a100/bin/python")
         print("Current:")
         print(" ", sys.executable)
 

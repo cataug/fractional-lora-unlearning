@@ -35,7 +35,7 @@ from peft import (
 # ROOTS
 # ============================================================
 
-ROOT = Path("/home/tahiti/Malashin_Projects")
+ROOT = Path("/home/user/fractional_unlearning")
 
 BASE_MODEL_DIR = ROOT / "hf_llm_models" / "distilgpt2"
 

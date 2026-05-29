@@ -16,7 +16,7 @@ from datasets import load_dataset, Dataset, DatasetDict
 # ROOTS / ENV
 # ============================================================
 
-ROOT = Path("/home/tahiti/Malashin_Projects")
+ROOT = Path("/home/user/fractional_unlearning")
 
 OUT_ROOT = ROOT / "unlearning_benchmarks"
 HF_CACHE = OUT_ROOT / "hf_cache"
@@ -137,7 +137,7 @@ def print_env() -> None:
     if ".venv_a100" not in sys.executable:
         print("\nWARNING: this does not look like .venv_a100 Python.")
         print("Expected:")
-        print("  /home/tahiti/Malashin_Projects/.venv_a100/bin/python")
+        print("  /home/user/fractional_unlearning/.venv_a100/bin/python")
         print("Current:")
         print(" ", sys.executable)
 

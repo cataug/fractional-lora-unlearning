@@ -95,7 +95,7 @@ def print_env() -> None:
     if ".venv_a100" not in sys.executable:
         print("\nWARNING: python executable does not look like .venv_a100.")
         print("Expected something like:")
-        print("  /home/tahiti/Malashin_Projects/.venv_a100/bin/python")
+        print("  /home/user/fractional_unlearning/.venv_a100/bin/python")
         print("Current:")
         print(" ", sys.executable)
 

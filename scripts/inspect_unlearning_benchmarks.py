@@ -13,7 +13,7 @@ import pandas as pd
 # CONFIG
 # ============================================================
 
-ROOT = Path("/home/tahiti/Malashin_Projects")
+ROOT = Path("/home/user/fractional_unlearning")
 
 BENCH_ROOT = ROOT / "unlearning_benchmarks"
 
