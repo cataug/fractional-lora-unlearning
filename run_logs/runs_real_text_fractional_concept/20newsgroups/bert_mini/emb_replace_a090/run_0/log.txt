@@ -1,0 +1,41 @@
+====================================================================================================
+REAL TEXT FRACTIONAL CONCEPT RUN
+====================================================================================================
+DATASET      : 20newsgroups
+TASK         : topic_classification
+NUM LABELS   : 20
+MODEL        : bert_mini
+MODEL PATH   : /home/user/fractional_unlearning/hf_models/bert_mini
+SCENARIO     : emb_replace_a090
+RUN          : 0
+SEED         : 658
+DEVICE       : cuda:0
+USE_AMP      : True
+BATCH_SIZE   : 32
+EPOCHS       : 5
+TRAIN SIZE   : 10183
+VAL SIZE     : 1131
+TEST SIZE    : 7532
+PARAMETERS   : 11,175,700
+TRAINABLE    : 11,175,700
+TRAINABLE SCOPE : all
+TARGET PARAM COUNT  : 7,945,728
+TARGET TENSOR COUNT : 5
+TARGET PREVIEW      : ['bert.embeddings.word_embeddings.weight', 'bert.embeddings.position_embeddings.weight', 'bert.embeddings.token_type_embeddings.weight', 'bert.embeddings.LayerNorm.weight', 'bert.embeddings.LayerNorm.bias']
+SCENARIO CFG : {'scenario_name': 'emb_replace_a090', 'base_optimizer': 'adamw', 'lr': 2e-05, 'weight_decay': 0.01, 'mode': 'replace', 'target': 'embeddings', 'alpha': 0.9, 'beta': 0.9, 'mix_lambda': 1.0, 'start_epoch': 1, 'trainable_scope': 'all'}
+====================================================================================================
+Epoch 001/5 | Train Loss 2.7184 | Train Acc 0.2442 | Train MacroF1 0.2181 | Val Loss 2.3037 | Val Acc 0.4925 | Val MacroF1 0.4123 | Test Loss 2.3376 | Test Acc 0.4409 | Test MacroF1 0.3729 | Grad 0.8754 | NonFiniteGrad 0.0 | FracApplied 5.0 | Throughput 228.3 samp/s | Time 44.60s
+Epoch 002/5 | Train Loss 2.0701 | Train Acc 0.5314 | Train MacroF1 0.4800 | Val Loss 1.7943 | Val Acc 0.5986 | Val MacroF1 0.5430 | Test Loss 1.8562 | Test Acc 0.5643 | Test MacroF1 0.5142 | Grad 0.8133 | NonFiniteGrad 0.0 | FracApplied 5.0 | Throughput 287.8 samp/s | Time 35.39s
+Epoch 003/5 | Train Loss 1.6128 | Train Acc 0.6602 | Train MacroF1 0.6228 | Val Loss 1.4879 | Val Acc 0.6534 | Val MacroF1 0.6106 | Test Loss 1.5698 | Test Acc 0.6146 | Test MacroF1 0.5768 | Grad 0.7613 | NonFiniteGrad 0.0 | FracApplied 5.0 | Throughput 242.3 samp/s | Time 42.03s
+Epoch 004/5 | Train Loss 1.2712 | Train Acc 0.7349 | Train MacroF1 0.7040 | Val Loss 1.2894 | Val Acc 0.6764 | Val MacroF1 0.6381 | Test Loss 1.3891 | Test Acc 0.6401 | Test MacroF1 0.6105 | Grad 0.7373 | NonFiniteGrad 0.0 | FracApplied 5.0 | Throughput 243.4 samp/s | Time 41.83s
+Epoch 005/5 | Train Loss 1.0045 | Train Acc 0.7920 | Train MacroF1 0.7631 | Val Loss 1.1692 | Val Acc 0.6861 | Val MacroF1 0.6528 | Test Loss 1.2894 | Test Acc 0.6524 | Test MacroF1 0.6259 | Grad 0.7182 | NonFiniteGrad 0.0 | FracApplied 5.0 | Throughput 258.9 samp/s | Time 39.33s
+----------------------------------------------------------------------------------------------------
+BEST EPOCH                    : 5
+BEST VAL MACRO F1             : 0.652787
+BEST VAL ACC                  : 0.686118
+BEST VAL LOSS                 : 1.169181
+TEST MACRO F1 AT BEST VAL     : 0.625931
+TEST ACC AT BEST VAL          : 0.652416
+TEST LOSS AT BEST VAL         : 1.289358
+TOTAL RUN TIME                : 203.61 sec
+----------------------------------------------------------------------------------------------------

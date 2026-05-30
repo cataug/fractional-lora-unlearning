@@ -1,0 +1,35 @@
+====================================================================================================
+REAL TEXT FRACTIONAL TRANSFORMER RUN
+====================================================================================================
+DATASET      : ag_news
+TASK         : topic_classification
+NUM LABELS   : 4
+MODEL        : distilbert_base_uncased
+MODEL PATH   : /home/user/fractional_unlearning/hf_models/distilbert_base_uncased
+SCENARIO     : baseline_adamw
+RUN          : 1
+SEED         : 152
+DEVICE       : cuda:0
+USE_AMP      : True
+BATCH_SIZE   : 32
+EPOCHS       : 3
+TRAIN SIZE   : 108000
+VAL SIZE     : 12000
+TEST SIZE    : 7600
+PARAMETERS   : 66,956,548
+TRAINABLE    : 66,956,548
+SCENARIO CFG : {'scenario_name': 'baseline_adamw', 'base_optimizer': 'adamw', 'lr': 2e-05, 'weight_decay': 0.01, 'mode': 'none', 'target': 'none', 'alpha': None, 'beta': None, 'mix_lambda': 0.0, 'start_epoch': None}
+====================================================================================================
+Epoch 001/3 | Train Loss 0.2326 | Train Acc 0.9226 | Train MacroF1 0.9225 | Val Loss 0.1865 | Val Acc 0.9363 | Val MacroF1 0.9367 | Test Loss 0.1826 | Test Acc 0.9374 | Test MacroF1 0.9375 | Grad nan | FracApplied 0.0 | Throughput 232.2 samp/s | Time 465.03s
+Epoch 002/3 | Train Loss 0.1408 | Train Acc 0.9542 | Train MacroF1 0.9542 | Val Loss 0.1950 | Val Acc 0.9385 | Val MacroF1 0.9388 | Test Loss 0.1822 | Test Acc 0.9428 | Test MacroF1 0.9429 | Grad nan | FracApplied 0.0 | Throughput 226.3 samp/s | Time 477.21s
+Epoch 003/3 | Train Loss 0.0993 | Train Acc 0.9689 | Train MacroF1 0.9689 | Val Loss 0.2035 | Val Acc 0.9433 | Val MacroF1 0.9434 | Test Loss 0.1939 | Test Acc 0.9451 | Test MacroF1 0.9451 | Grad nan | FracApplied 0.0 | Throughput 220.6 samp/s | Time 489.63s
+----------------------------------------------------------------------------------------------------
+BEST EPOCH                    : 3
+BEST VAL MACRO F1             : 0.943411
+BEST VAL ACC                  : 0.943250
+BEST VAL LOSS                 : 0.203479
+TEST MACRO F1 AT BEST VAL     : 0.945076
+TEST ACC AT BEST VAL          : 0.945132
+TEST LOSS AT BEST VAL         : 0.193902
+TOTAL RUN TIME                : 1433.72 sec
+----------------------------------------------------------------------------------------------------

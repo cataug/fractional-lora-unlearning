@@ -1,0 +1,31 @@
+====================================================================================================
+DATASET      : small_D2_L64
+MODEL        : T_deep_mean
+SCENARIO     : delayed_emb_mix_a08_lam010_warm3
+RUN          : 0
+SEED         : 408
+DEVICE       : cuda:0
+USE_AMP      : True
+BATCH_SIZE   : 192
+PARAMETERS   : 1,003,530
+TRAIN SIZE   : 4000
+VAL SIZE     : 1000
+SCENARIO CFG : {'scenario_name': 'delayed_emb_mix_a08_lam010_warm3', 'base_optimizer': 'adamw', 'lr': 0.0003, 'weight_decay': 0.01, 'mode': 'mix', 'target': 'embeddings', 'alpha': 0.8, 'beta': 0.9, 'mix_lambda': 0.01, 'start_epoch': 4}
+====================================================================================================
+Epoch 001/10 | Train Loss 2.2411 | Train Acc 0.2173 | Train MacroF1 0.0751 | Val Loss 2.1702 | Val Acc 0.2350 | Val MacroF1 0.0677 | Val WeightedF1 0.1067 | Val Conf 0.2653 | Grad 1.4297 | FracApplied 0.0 | Throughput 843.2 samp/s | Time 4.74s
+Epoch 002/10 | Train Loss 2.0986 | Train Acc 0.2648 | Train MacroF1 0.1523 | Val Loss 2.0801 | Val Acc 0.2720 | Val MacroF1 0.1787 | Val WeightedF1 0.2293 | Val Conf 0.2754 | Grad 1.4864 | FracApplied 0.0 | Throughput 2532.4 samp/s | Time 1.58s
+Epoch 003/10 | Train Loss 2.0040 | Train Acc 0.2995 | Train MacroF1 0.2134 | Val Loss 2.0304 | Val Acc 0.2840 | Val MacroF1 0.1815 | Val WeightedF1 0.2203 | Val Conf 0.3513 | Grad 1.5388 | FracApplied 0.0 | Throughput 3132.3 samp/s | Time 1.28s
+Epoch 004/10 | Train Loss 1.9571 | Train Acc 0.3250 | Train MacroF1 0.2428 | Val Loss 1.9881 | Val Acc 0.2940 | Val MacroF1 0.1990 | Val WeightedF1 0.2434 | Val Conf 0.3493 | Grad 1.4423 | FracApplied 2.0 | Throughput 3236.2 samp/s | Time 1.24s
+Epoch 005/10 | Train Loss 1.9105 | Train Acc 0.3257 | Train MacroF1 0.2489 | Val Loss 1.9681 | Val Acc 0.3000 | Val MacroF1 0.2227 | Val WeightedF1 0.2712 | Val Conf 0.3121 | Grad 1.2142 | FracApplied 2.0 | Throughput 2547.3 samp/s | Time 1.57s
+Epoch 006/10 | Train Loss 1.8950 | Train Acc 0.3358 | Train MacroF1 0.2640 | Val Loss 1.9654 | Val Acc 0.2880 | Val MacroF1 0.2236 | Val WeightedF1 0.2715 | Val Conf 0.3014 | Grad 1.3575 | FracApplied 2.0 | Throughput 3191.2 samp/s | Time 1.25s
+Epoch 007/10 | Train Loss 1.8631 | Train Acc 0.3450 | Train MacroF1 0.2739 | Val Loss 1.9332 | Val Acc 0.3010 | Val MacroF1 0.2332 | Val WeightedF1 0.2745 | Val Conf 0.3366 | Grad 1.2796 | FracApplied 2.0 | Throughput 2841.3 samp/s | Time 1.41s
+Epoch 008/10 | Train Loss 1.8436 | Train Acc 0.3487 | Train MacroF1 0.2759 | Val Loss 1.9052 | Val Acc 0.3080 | Val MacroF1 0.2316 | Val WeightedF1 0.2795 | Val Conf 0.3402 | Grad 1.2377 | FracApplied 2.0 | Throughput 2546.2 samp/s | Time 1.57s
+Epoch 009/10 | Train Loss 1.8143 | Train Acc 0.3585 | Train MacroF1 0.2862 | Val Loss 1.8972 | Val Acc 0.3130 | Val MacroF1 0.2389 | Val WeightedF1 0.2850 | Val Conf 0.3456 | Grad 1.1428 | FracApplied 2.0 | Throughput 3517.3 samp/s | Time 1.14s
+Epoch 010/10 | Train Loss 1.8104 | Train Acc 0.3548 | Train MacroF1 0.2835 | Val Loss 1.8910 | Val Acc 0.3130 | Val MacroF1 0.2528 | Val WeightedF1 0.3009 | Val Conf 0.3115 | Grad 1.3906 | FracApplied 2.0 | Throughput 4298.3 samp/s | Time 0.93s
+----------------------------------------------------------------------------------------------------
+BEST EPOCH          : 10
+BEST VAL MACRO F1   : 0.252845
+BEST VAL ACC        : 0.313000
+BEST VAL LOSS       : 1.890971
+TOTAL RUN TIME      : 16.81 sec
+----------------------------------------------------------------------------------------------------

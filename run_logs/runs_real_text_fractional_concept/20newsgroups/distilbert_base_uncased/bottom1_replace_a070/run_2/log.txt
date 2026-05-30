@@ -1,0 +1,41 @@
+====================================================================================================
+REAL TEXT FRACTIONAL CONCEPT RUN
+====================================================================================================
+DATASET      : 20newsgroups
+TASK         : topic_classification
+NUM LABELS   : 20
+MODEL        : distilbert_base_uncased
+MODEL PATH   : /home/user/fractional_unlearning/hf_models/distilbert_base_uncased
+SCENARIO     : bottom1_replace_a070
+RUN          : 2
+SEED         : 805
+DEVICE       : cuda:0
+USE_AMP      : True
+BATCH_SIZE   : 32
+EPOCHS       : 5
+TRAIN SIZE   : 10183
+VAL SIZE     : 1131
+TEST SIZE    : 7532
+PARAMETERS   : 66,968,852
+TRAINABLE    : 66,968,852
+TRAINABLE SCOPE : all
+TARGET PARAM COUNT  : 7,087,872
+TARGET TENSOR COUNT : 16
+TARGET PREVIEW      : ['distilbert.transformer.layer.0.attention.q_lin.weight', 'distilbert.transformer.layer.0.attention.q_lin.bias', 'distilbert.transformer.layer.0.attention.k_lin.weight', 'distilbert.transformer.layer.0.attention.k_lin.bias', 'distilbert.transformer.layer.0.attention.v_lin.weight', 'distilbert.transformer.layer.0.attention.v_lin.bias', 'distilbert.transformer.layer.0.attention.out_lin.weight', 'distilbert.transformer.layer.0.attention.out_lin.bias', 'distilbert.transformer.layer.0.sa_layer_norm.weight', 'distilbert.transformer.layer.0.sa_layer_norm.bias', 'distilbert.transformer.layer.0.ffn.lin1.weight', 'distilbert.transformer.layer.0.ffn.lin1.bias', 'distilbert.transformer.layer.0.ffn.lin2.weight', 'distilbert.transformer.layer.0.ffn.lin2.bias', 'distilbert.transformer.layer.0.output_layer_norm.weight', 'distilbert.transformer.layer.0.output_layer_norm.bias']
+SCENARIO CFG : {'scenario_name': 'bottom1_replace_a070', 'base_optimizer': 'adamw', 'lr': 2e-05, 'weight_decay': 0.01, 'mode': 'replace', 'target': 'bottom1', 'alpha': 0.7, 'beta': 0.9, 'mix_lambda': 1.0, 'start_epoch': 1, 'trainable_scope': 'all'}
+====================================================================================================
+Epoch 001/5 | Train Loss 1.8576 | Train Acc 0.5232 | Train MacroF1 0.4955 | Val Loss 1.2038 | Val Acc 0.6711 | Val MacroF1 0.6484 | Test Loss 1.2704 | Test Acc 0.6460 | Test MacroF1 0.6196 | Grad 0.9360 | NonFiniteGrad 0.0 | FracApplied 16.0 | Throughput 122.2 samp/s | Time 83.36s
+Epoch 002/5 | Train Loss 0.9701 | Train Acc 0.7242 | Train MacroF1 0.6957 | Val Loss 1.0358 | Val Acc 0.6932 | Val MacroF1 0.6759 | Test Loss 1.1467 | Test Acc 0.6656 | Test MacroF1 0.6454 | Grad 0.9141 | NonFiniteGrad 0.0 | FracApplied 16.0 | Throughput 184.1 samp/s | Time 55.30s
+Epoch 003/5 | Train Loss 0.6591 | Train Acc 0.8109 | Train MacroF1 0.7892 | Val Loss 1.0062 | Val Acc 0.7100 | Val MacroF1 0.6939 | Test Loss 1.1111 | Test Acc 0.6835 | Test MacroF1 0.6618 | Grad 0.9112 | NonFiniteGrad 0.0 | FracApplied 16.0 | Throughput 177.1 samp/s | Time 57.49s
+Epoch 004/5 | Train Loss 0.4601 | Train Acc 0.8674 | Train MacroF1 0.8537 | Val Loss 1.0153 | Val Acc 0.7126 | Val MacroF1 0.6975 | Test Loss 1.1910 | Test Acc 0.6774 | Test MacroF1 0.6558 | Grad 0.9092 | NonFiniteGrad 0.0 | FracApplied 16.0 | Throughput 176.6 samp/s | Time 57.65s
+Epoch 005/5 | Train Loss 0.3207 | Train Acc 0.9058 | Train MacroF1 0.8980 | Val Loss 1.0461 | Val Acc 0.7259 | Val MacroF1 0.7197 | Test Loss 1.2483 | Test Acc 0.6847 | Test MacroF1 0.6742 | Grad 0.9079 | NonFiniteGrad 0.0 | FracApplied 16.0 | Throughput 249.8 samp/s | Time 40.76s
+----------------------------------------------------------------------------------------------------
+BEST EPOCH                    : 5
+BEST VAL MACRO F1             : 0.719651
+BEST VAL ACC                  : 0.725906
+BEST VAL LOSS                 : 1.046114
+TEST MACRO F1 AT BEST VAL     : 0.674225
+TEST ACC AT BEST VAL          : 0.684679
+TEST LOSS AT BEST VAL         : 1.248266
+TOTAL RUN TIME                : 296.96 sec
+----------------------------------------------------------------------------------------------------

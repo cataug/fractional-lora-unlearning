@@ -1,0 +1,41 @@
+====================================================================================================
+REAL TEXT FRACTIONAL CONCEPT RUN
+====================================================================================================
+DATASET      : 20newsgroups
+TASK         : topic_classification
+NUM LABELS   : 20
+MODEL        : bert_mini
+MODEL PATH   : /home/user/fractional_unlearning/hf_models/bert_mini
+SCENARIO     : emb_plus_bottom1_replace_a070
+RUN          : 0
+SEED         : 683
+DEVICE       : cuda:0
+USE_AMP      : True
+BATCH_SIZE   : 32
+EPOCHS       : 5
+TRAIN SIZE   : 10183
+VAL SIZE     : 1131
+TEST SIZE    : 7532
+PARAMETERS   : 11,175,700
+TRAINABLE    : 11,175,700
+TRAINABLE SCOPE : all
+TARGET PARAM COUNT  : 8,735,488
+TARGET TENSOR COUNT : 21
+TARGET PREVIEW      : ['bert.embeddings.word_embeddings.weight', 'bert.embeddings.position_embeddings.weight', 'bert.embeddings.token_type_embeddings.weight', 'bert.embeddings.LayerNorm.weight', 'bert.embeddings.LayerNorm.bias', 'bert.encoder.layer.0.attention.self.query.weight', 'bert.encoder.layer.0.attention.self.query.bias', 'bert.encoder.layer.0.attention.self.key.weight', 'bert.encoder.layer.0.attention.self.key.bias', 'bert.encoder.layer.0.attention.self.value.weight', 'bert.encoder.layer.0.attention.self.value.bias', 'bert.encoder.layer.0.attention.output.dense.weight', 'bert.encoder.layer.0.attention.output.dense.bias', 'bert.encoder.layer.0.attention.output.LayerNorm.weight', 'bert.encoder.layer.0.attention.output.LayerNorm.bias', 'bert.encoder.layer.0.intermediate.dense.weight', 'bert.encoder.layer.0.intermediate.dense.bias', 'bert.encoder.layer.0.output.dense.weight', 'bert.encoder.layer.0.output.dense.bias', 'bert.encoder.layer.0.output.LayerNorm.weight']
+SCENARIO CFG : {'scenario_name': 'emb_plus_bottom1_replace_a070', 'base_optimizer': 'adamw', 'lr': 2e-05, 'weight_decay': 0.01, 'mode': 'replace', 'target': 'embeddings_plus_bottom1', 'alpha': 0.7, 'beta': 0.9, 'mix_lambda': 1.0, 'start_epoch': 1, 'trainable_scope': 'all'}
+====================================================================================================
+Epoch 001/5 | Train Loss 2.6541 | Train Acc 0.2639 | Train MacroF1 0.2240 | Val Loss 2.2698 | Val Acc 0.3926 | Val MacroF1 0.3192 | Test Loss 2.2674 | Test Acc 0.4028 | Test MacroF1 0.3303 | Grad 0.8269 | NonFiniteGrad 0.0 | FracApplied 21.0 | Throughput 222.8 samp/s | Time 45.71s
+Epoch 002/5 | Train Loss 2.0091 | Train Acc 0.5220 | Train MacroF1 0.4721 | Val Loss 1.8062 | Val Acc 0.5703 | Val MacroF1 0.5272 | Test Loss 1.8037 | Test Acc 0.5758 | Test MacroF1 0.5333 | Grad 0.7193 | NonFiniteGrad 0.0 | FracApplied 21.0 | Throughput 284.8 samp/s | Time 35.75s
+Epoch 003/5 | Train Loss 1.5512 | Train Acc 0.6561 | Train MacroF1 0.6148 | Val Loss 1.5361 | Val Acc 0.6074 | Val MacroF1 0.5694 | Test Loss 1.5492 | Test Acc 0.6067 | Test MacroF1 0.5676 | Grad 0.6456 | NonFiniteGrad 0.0 | FracApplied 21.0 | Throughput 244.1 samp/s | Time 41.72s
+Epoch 004/5 | Train Loss 1.2167 | Train Acc 0.7366 | Train MacroF1 0.7046 | Val Loss 1.3906 | Val Acc 0.6242 | Val MacroF1 0.5958 | Test Loss 1.4071 | Test Acc 0.6290 | Test MacroF1 0.5991 | Grad 0.6077 | NonFiniteGrad 0.0 | FracApplied 21.0 | Throughput 243.7 samp/s | Time 41.78s
+Epoch 005/5 | Train Loss 0.9742 | Train Acc 0.7902 | Train MacroF1 0.7608 | Val Loss 1.2728 | Val Acc 0.6446 | Val MacroF1 0.6201 | Test Loss 1.3033 | Test Acc 0.6458 | Test MacroF1 0.6180 | Grad 0.5792 | NonFiniteGrad 0.0 | FracApplied 21.0 | Throughput 260.6 samp/s | Time 39.08s
+----------------------------------------------------------------------------------------------------
+BEST EPOCH                    : 5
+BEST VAL MACRO F1             : 0.620149
+BEST VAL ACC                  : 0.644562
+BEST VAL LOSS                 : 1.272781
+TEST MACRO F1 AT BEST VAL     : 0.617971
+TEST ACC AT BEST VAL          : 0.645778
+TEST LOSS AT BEST VAL         : 1.303312
+TOTAL RUN TIME                : 204.39 sec
+----------------------------------------------------------------------------------------------------

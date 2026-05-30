@@ -1,0 +1,35 @@
+====================================================================================================
+REAL TEXT FRACTIONAL TRANSFORMER RUN
+====================================================================================================
+DATASET      : 20newsgroups
+TASK         : topic_classification
+NUM LABELS   : 20
+MODEL        : bert_tiny
+MODEL PATH   : /home/user/fractional_unlearning/hf_models/bert_tiny
+SCENARIO     : delayed_emb_mix_a08_lam010_warm1
+RUN          : 1
+SEED         : 353
+DEVICE       : cuda:0
+USE_AMP      : True
+BATCH_SIZE   : 32
+EPOCHS       : 3
+TRAIN SIZE   : 10183
+VAL SIZE     : 1131
+TEST SIZE    : 7532
+PARAMETERS   : 4,388,500
+TRAINABLE    : 4,388,500
+SCENARIO CFG : {'scenario_name': 'delayed_emb_mix_a08_lam010_warm1', 'base_optimizer': 'adamw', 'lr': 2e-05, 'weight_decay': 0.01, 'mode': 'mix', 'target': 'embeddings', 'alpha': 0.8, 'beta': 0.9, 'mix_lambda': 0.01, 'start_epoch': 2}
+====================================================================================================
+Epoch 001/3 | Train Loss 2.9523 | Train Acc 0.1077 | Train MacroF1 0.0794 | Val Loss 2.8631 | Val Acc 0.2228 | Val MacroF1 0.1510 | Test Loss 2.8663 | Test Acc 0.2055 | Test MacroF1 0.1450 | Grad 1.0000 | FracApplied 0.0 | Throughput 297.8 samp/s | Time 34.19s
+Epoch 002/3 | Train Loss 2.7625 | Train Acc 0.2391 | Train MacroF1 0.1885 | Val Loss 2.6121 | Val Acc 0.3077 | Val MacroF1 0.2375 | Test Loss 2.6229 | Test Acc 0.2768 | Test MacroF1 0.2153 | Grad 0.9960 | FracApplied 5.0 | Throughput 695.8 samp/s | Time 14.63s
+Epoch 003/3 | Train Loss 2.5309 | Train Acc 0.3080 | Train MacroF1 0.2528 | Val Loss 2.3952 | Val Acc 0.3616 | Val MacroF1 0.2937 | Test Loss 2.4149 | Test Acc 0.3494 | Test MacroF1 0.2864 | Grad 0.9954 | FracApplied 5.0 | Throughput 1069.1 samp/s | Time 9.52s
+----------------------------------------------------------------------------------------------------
+BEST EPOCH                    : 3
+BEST VAL MACRO F1             : 0.293733
+BEST VAL ACC                  : 0.361627
+BEST VAL LOSS                 : 2.395153
+TEST MACRO F1 AT BEST VAL     : 0.286371
+TEST ACC AT BEST VAL          : 0.349442
+TEST LOSS AT BEST VAL         : 2.414862
+TOTAL RUN TIME                : 58.44 sec
+----------------------------------------------------------------------------------------------------

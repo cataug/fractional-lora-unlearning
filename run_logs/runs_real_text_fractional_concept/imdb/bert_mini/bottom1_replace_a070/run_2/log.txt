@@ -1,0 +1,41 @@
+====================================================================================================
+REAL TEXT FRACTIONAL CONCEPT RUN
+====================================================================================================
+DATASET      : imdb
+TASK         : sentiment_classification
+NUM LABELS   : 2
+MODEL        : bert_mini
+MODEL PATH   : /home/user/fractional_unlearning/hf_models/bert_mini
+SCENARIO     : bottom1_replace_a070
+RUN          : 2
+SEED         : 415
+DEVICE       : cuda:0
+USE_AMP      : True
+BATCH_SIZE   : 32
+EPOCHS       : 5
+TRAIN SIZE   : 22500
+VAL SIZE     : 2500
+TEST SIZE    : 25000
+PARAMETERS   : 11,171,074
+TRAINABLE    : 11,171,074
+TRAINABLE SCOPE : all
+TARGET PARAM COUNT  : 789,760
+TARGET TENSOR COUNT : 16
+TARGET PREVIEW      : ['bert.encoder.layer.0.attention.self.query.weight', 'bert.encoder.layer.0.attention.self.query.bias', 'bert.encoder.layer.0.attention.self.key.weight', 'bert.encoder.layer.0.attention.self.key.bias', 'bert.encoder.layer.0.attention.self.value.weight', 'bert.encoder.layer.0.attention.self.value.bias', 'bert.encoder.layer.0.attention.output.dense.weight', 'bert.encoder.layer.0.attention.output.dense.bias', 'bert.encoder.layer.0.attention.output.LayerNorm.weight', 'bert.encoder.layer.0.attention.output.LayerNorm.bias', 'bert.encoder.layer.0.intermediate.dense.weight', 'bert.encoder.layer.0.intermediate.dense.bias', 'bert.encoder.layer.0.output.dense.weight', 'bert.encoder.layer.0.output.dense.bias', 'bert.encoder.layer.0.output.LayerNorm.weight', 'bert.encoder.layer.0.output.LayerNorm.bias']
+SCENARIO CFG : {'scenario_name': 'bottom1_replace_a070', 'base_optimizer': 'adamw', 'lr': 2e-05, 'weight_decay': 0.01, 'mode': 'replace', 'target': 'bottom1', 'alpha': 0.7, 'beta': 0.9, 'mix_lambda': 1.0, 'start_epoch': 1, 'trainable_scope': 'all'}
+====================================================================================================
+Epoch 001/5 | Train Loss 0.4985 | Train Acc 0.7594 | Train MacroF1 0.7594 | Val Loss 0.4048 | Val Acc 0.8216 | Val MacroF1 0.8214 | Test Loss 0.4007 | Test Acc 0.8200 | Test MacroF1 0.8199 | Grad 0.9547 | NonFiniteGrad 0.0 | FracApplied 16.0 | Throughput 190.4 samp/s | Time 118.17s
+Epoch 002/5 | Train Loss 0.3893 | Train Acc 0.8282 | Train MacroF1 0.8282 | Val Loss 0.4080 | Val Acc 0.8168 | Val MacroF1 0.8146 | Test Loss 0.4096 | Test Acc 0.8150 | Test MacroF1 0.8133 | Grad 0.9548 | NonFiniteGrad 0.0 | FracApplied 16.0 | Throughput 196.2 samp/s | Time 114.66s
+Epoch 003/5 | Train Loss 0.3319 | Train Acc 0.8590 | Train MacroF1 0.8590 | Val Loss 0.3878 | Val Acc 0.8332 | Val MacroF1 0.8330 | Test Loss 0.3937 | Test Acc 0.8270 | Test MacroF1 0.8264 | Grad 0.9546 | NonFiniteGrad 0.0 | FracApplied 16.0 | Throughput 196.3 samp/s | Time 114.64s
+Epoch 004/5 | Train Loss 0.2885 | Train Acc 0.8817 | Train MacroF1 0.8817 | Val Loss 0.3768 | Val Acc 0.8388 | Val MacroF1 0.8385 | Test Loss 0.3831 | Test Acc 0.8377 | Test MacroF1 0.8376 | Grad 0.9532 | NonFiniteGrad 0.0 | FracApplied 16.0 | Throughput 196.1 samp/s | Time 114.72s
+Epoch 005/5 | Train Loss 0.2445 | Train Acc 0.9035 | Train MacroF1 0.9035 | Val Loss 0.3861 | Val Acc 0.8476 | Val MacroF1 0.8476 | Test Loss 0.4094 | Test Acc 0.8392 | Test MacroF1 0.8391 | Grad 0.9552 | NonFiniteGrad 0.0 | FracApplied 16.0 | Throughput 227.7 samp/s | Time 98.81s
+----------------------------------------------------------------------------------------------------
+BEST EPOCH                    : 5
+BEST VAL MACRO F1             : 0.847595
+BEST VAL ACC                  : 0.847600
+BEST VAL LOSS                 : 0.386115
+TEST MACRO F1 AT BEST VAL     : 0.839104
+TEST ACC AT BEST VAL          : 0.839160
+TEST LOSS AT BEST VAL         : 0.409428
+TOTAL RUN TIME                : 561.33 sec
+----------------------------------------------------------------------------------------------------

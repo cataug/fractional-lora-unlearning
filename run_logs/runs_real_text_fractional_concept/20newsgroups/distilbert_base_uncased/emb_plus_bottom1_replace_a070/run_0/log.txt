@@ -1,0 +1,41 @@
+====================================================================================================
+REAL TEXT FRACTIONAL CONCEPT RUN
+====================================================================================================
+DATASET      : 20newsgroups
+TASK         : topic_classification
+NUM LABELS   : 20
+MODEL        : distilbert_base_uncased
+MODEL PATH   : /home/user/fractional_unlearning/hf_models/distilbert_base_uncased
+SCENARIO     : emb_plus_bottom1_replace_a070
+RUN          : 0
+SEED         : 813
+DEVICE       : cuda:0
+USE_AMP      : True
+BATCH_SIZE   : 32
+EPOCHS       : 5
+TRAIN SIZE   : 10183
+VAL SIZE     : 1131
+TEST SIZE    : 7532
+PARAMETERS   : 66,968,852
+TRAINABLE    : 66,968,852
+TRAINABLE SCOPE : all
+TARGET PARAM COUNT  : 30,923,520
+TARGET TENSOR COUNT : 20
+TARGET PREVIEW      : ['distilbert.embeddings.word_embeddings.weight', 'distilbert.embeddings.position_embeddings.weight', 'distilbert.embeddings.LayerNorm.weight', 'distilbert.embeddings.LayerNorm.bias', 'distilbert.transformer.layer.0.attention.q_lin.weight', 'distilbert.transformer.layer.0.attention.q_lin.bias', 'distilbert.transformer.layer.0.attention.k_lin.weight', 'distilbert.transformer.layer.0.attention.k_lin.bias', 'distilbert.transformer.layer.0.attention.v_lin.weight', 'distilbert.transformer.layer.0.attention.v_lin.bias', 'distilbert.transformer.layer.0.attention.out_lin.weight', 'distilbert.transformer.layer.0.attention.out_lin.bias', 'distilbert.transformer.layer.0.sa_layer_norm.weight', 'distilbert.transformer.layer.0.sa_layer_norm.bias', 'distilbert.transformer.layer.0.ffn.lin1.weight', 'distilbert.transformer.layer.0.ffn.lin1.bias', 'distilbert.transformer.layer.0.ffn.lin2.weight', 'distilbert.transformer.layer.0.ffn.lin2.bias', 'distilbert.transformer.layer.0.output_layer_norm.weight', 'distilbert.transformer.layer.0.output_layer_norm.bias']
+SCENARIO CFG : {'scenario_name': 'emb_plus_bottom1_replace_a070', 'base_optimizer': 'adamw', 'lr': 2e-05, 'weight_decay': 0.01, 'mode': 'replace', 'target': 'embeddings_plus_bottom1', 'alpha': 0.7, 'beta': 0.9, 'mix_lambda': 1.0, 'start_epoch': 1, 'trainable_scope': 'all'}
+====================================================================================================
+Epoch 001/5 | Train Loss 1.8648 | Train Acc 0.5068 | Train MacroF1 0.4803 | Val Loss 1.2143 | Val Acc 0.6490 | Val MacroF1 0.6268 | Test Loss 1.2557 | Test Acc 0.6433 | Test MacroF1 0.6153 | Grad 0.8809 | NonFiniteGrad 0.0 | FracApplied 20.0 | Throughput 90.0 samp/s | Time 113.16s
+Epoch 002/5 | Train Loss 0.9089 | Train Acc 0.7445 | Train MacroF1 0.7172 | Val Loss 0.9709 | Val Acc 0.7126 | Val MacroF1 0.6934 | Test Loss 1.0955 | Test Acc 0.6811 | Test MacroF1 0.6560 | Grad 0.8148 | NonFiniteGrad 0.0 | FracApplied 20.0 | Throughput 151.4 samp/s | Time 67.27s
+Epoch 003/5 | Train Loss 0.5929 | Train Acc 0.8438 | Train MacroF1 0.6300 | Val Loss 0.0000 | Val Acc 0.0460 | Val MacroF1 0.0044 | Test Loss 0.0000 | Test Acc 0.0424 | Test MacroF1 0.0041 | Grad 0.7607 | NonFiniteGrad 1.0 | FracApplied 20.0 | Throughput 4.9 samp/s | Time 6.57s
+Epoch 004/5 | Train Loss nan | Train Acc 0.0000 | Train MacroF1 0.0000 | Val Loss 0.0000 | Val Acc 0.0460 | Val MacroF1 0.0044 | Test Loss 0.0000 | Test Acc 0.0424 | Test MacroF1 0.0041 | Grad 0.0000 | NonFiniteGrad 0.0 | FracApplied 0.0 | Throughput 0.0 samp/s | Time 6.28s
+Epoch 005/5 | Train Loss nan | Train Acc 0.0000 | Train MacroF1 0.0000 | Val Loss 0.0000 | Val Acc 0.0460 | Val MacroF1 0.0044 | Test Loss 0.0000 | Test Acc 0.0424 | Test MacroF1 0.0041 | Grad 0.0000 | NonFiniteGrad 0.0 | FracApplied 0.0 | Throughput 0.0 samp/s | Time 6.33s
+----------------------------------------------------------------------------------------------------
+BEST EPOCH                    : 2
+BEST VAL MACRO F1             : 0.693412
+BEST VAL ACC                  : 0.712644
+BEST VAL LOSS                 : 0.970879
+TEST MACRO F1 AT BEST VAL     : 0.656009
+TEST ACC AT BEST VAL          : 0.681094
+TEST LOSS AT BEST VAL         : 1.095518
+TOTAL RUN TIME                : 200.52 sec
+----------------------------------------------------------------------------------------------------
